@@ -3,7 +3,7 @@ Rails.application.configure do
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
-  # since you don't have to restart the web server when you make code changes.
+  # since you don't have to restart the web server when you make code changes.//TODO
   config.cache_classes = false
 
   # Do not eager load code on boot.
@@ -32,7 +32,7 @@ Rails.application.configure do
   config.assets.digest = true
 
   # Adds additional error checking when serving assets at runtime.
-  # Checks for improperly declared sprockets dependencies.
+  # Checks for improperly declared sprockets dependencies.//TODO
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
 
