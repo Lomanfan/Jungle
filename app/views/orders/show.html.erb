@@ -4,6 +4,34 @@
     <h1>Order #<%= @order.id %></h1>
   </header>
 
+  <div class="panel panel-default items">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th colspan="2">Product</th>
+        <th>Unit Price</th>
+        <th>Quantity</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @line_items.each do |line_item| %>
+        <%= render 'line_item', line_item: line_item %>
+      <% end %>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th colspan="4">
+          TOTAL:
+        </th>
+        <th>
+          <%= humanized_money_with_symbol (@order.total_cents / 100.0) %>
+        </th>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+
   <div class="order-summary jumbotron">
     <h4>Thank you for your order!</h4>
   </div>
