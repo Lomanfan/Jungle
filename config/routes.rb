@@ -12,9 +12,10 @@ Rails.application.routes.draw do
 
   resources :orders, only: [:create, :show]
 
-  namespace :admin do
+  namespace :admin do              #//TODO:namespace?
     root to: 'dashboard#show'
     resources :products, except: [:edit, :update, :show]
+    resources :categories, except: [:edit, :update, :show, :destroy]
   end
 
   get '/about' => 'about#index'
