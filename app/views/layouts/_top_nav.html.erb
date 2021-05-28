@@ -30,6 +30,25 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+
+      <li>
+      <% if current_user %>
+        <li class="nav navbar-text">
+            Welcome~! <%= current_user.first_name %>
+       </li>
+        <li><%= link_to 'Log Out', [:logout] %></li>
+       <% else %>
+        <li><%= link_to 'Login', [:login] %></li>
+        <li><%= link_to 'Sign up', [:signup] %></li>
+        <% end %>
+        </li> 
+
+        <li>
+          <%= link_to cart_path do %>
+            <%= fa_icon "shopping-cart" %> My Cart (<%= cart.size %>)
+          <% end %>
+        </li>
+
        <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 
@@ -42,11 +61,7 @@
             <li><%= link_to 'Categories',  [:admin, :categories] %></li>
           </ul>
         </li>
-        <li>
-          <%= link_to cart_path do %>
-            <%= fa_icon "shopping-cart" %> My Cart (<%= cart.size %>)
-          <% end %>
-        </li>
+
       </ul>
     </div>
   </div>
