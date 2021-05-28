@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   # resources :about, only: [:index]
 
   get '/signup' => 'users#new'
-  get '/users' => 'users#create'
+  post '/users' => 'users#create'
   # resources :users, only: [:create, :new]
 
   get '/login' => 'sessions#new'

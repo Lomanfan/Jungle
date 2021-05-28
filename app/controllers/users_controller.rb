@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     user = User.new(user_params)  #TODO
     if user.save
       session[:user_id] = user.id
-      redirect_to 'root_path'    #"/"
+      redirect_to '/'    #"/"
     else
       redirect_to 'signup_path'  #TODO
   end
