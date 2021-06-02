@@ -20,6 +20,6 @@ RSpec.feature "ProductDetails", type: :feature, js: true do  #TODO
   scenario "When product image is clicked, show product details" do
     visit root_path
 
-  save_screenshot
+  save_screenshot 'product_details.png'
   end
 end
