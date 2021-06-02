@@ -19,7 +19,10 @@ RSpec.feature "ProductDetails", type: :feature, js: true do  #TODO
   
   scenario "When product image is clicked, show product details" do
     visit root_path
-
-  save_screenshot 'product_details.png'
+    first('.product > header').click
+    save_screenshot 'product_details.png'
+    # puts page.html
+    expect(page).to have_css 'section.products-show'
   end
+
 end
