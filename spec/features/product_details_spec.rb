@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "ProductDetails", type: :feature, js: true do  #TODO
+RSpec.feature "ProductDetails", type: :feature, js: true do
   
   # SETUP
   before :each do
@@ -19,7 +19,7 @@ RSpec.feature "ProductDetails", type: :feature, js: true do  #TODO
   
   scenario "When product image or name is clicked, show product details" do
     visit root_path
-    first('.product > header').click     #ambiguity resolution #TODO
+    first('.product > header').click     #ambiguity resolution
     save_screenshot 'product_details.png'
     # puts page.html
     expect(page).to have_css 'section.products-show', count: 1
